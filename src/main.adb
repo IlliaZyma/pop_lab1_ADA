@@ -8,6 +8,7 @@ procedure Main is
    task type Task1;
    Global_Task_ID : Integer := 0;
    time : Integer;
+   num_of_threads : Integer;
 
 
    task body Break_Task is
@@ -32,13 +33,14 @@ procedure Main is
       Ada.Text_IO.Put_Line("# " & Task1_ID'Img & ": " & Sum1'Img);
    end Task1;
 
-   begin
-      time := Integer'Value(Get_Line);
+begin
+   Ada.Text_IO.Put_Line("Enter time of delay");
+   time := Integer'Value(Get_Line);
+   Ada.Text_IO.Put_Line("Enter time of delay");
+   num_of_threads := Integer'Value(Get_Line);
    declare
       Breaker : Break_Task;
-   T1 : Task1;
-   T2 : Task1;
-   T3 : Task1;
+      threads: array(1..num_of_threads) of Task1;
    begin
       null;
    end;
